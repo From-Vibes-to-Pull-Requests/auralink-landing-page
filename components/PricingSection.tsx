@@ -2,7 +2,10 @@
 
 import * as React from "react"
 import { CheckIcon } from "@radix-ui/react-icons"
-import { cn } from "@/lib/utils"
+
+function cn(...classes: Array<string | false | null | undefined>) {
+  return classes.filter(Boolean).join(" ")
+}
 
 type PlanLevel = "starter" | "pro" | "enterprise"
 

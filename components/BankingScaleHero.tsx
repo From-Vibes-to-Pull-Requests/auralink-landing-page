@@ -38,14 +38,22 @@ const stats: StatItem[] = [
     delay: 0.6,
   },
 ]
+
+const pseudoRandom = (seed: number): number => {
+  const x = Math.sin(seed * 9999.91) * 10000
+  return x - Math.floor(x)
+}
+
 const generateDataPoints = (): DataPoint[] => {
   const points: DataPoint[] = []
   const baseLeft = 1
   const spacing = 32
   for (let i = 0; i < 50; i++) {
     const direction = i % 2 === 0 ? "down" : "up"
-    const height = Math.floor(Math.random() * 120) + 88
-    const top = direction === "down" ? Math.random() * 150 + 250 : Math.random() * 100 - 80
+    const heightRand = pseudoRandom(i + 1)
+    const topRand = pseudoRandom(i + 101)
+    const height = Math.floor(heightRand * 120) + 88
+    const top = direction === "down" ? topRand * 150 + 250 : topRand * 100 - 80
     points.push({
       id: i,
       left: baseLeft + i * spacing,
