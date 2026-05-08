@@ -53,7 +53,7 @@ const generateDataPoints = (): DataPoint[] => {
     const heightRand = pseudoRandom(i + 1)
     const topRand = pseudoRandom(i + 101)
     const height = Math.floor(heightRand * 120) + 88
-    const top = direction === "down" ? topRand * 150 + 250 : topRand * 100 - 80
+    const top = direction === "down" ? Math.floor(topRand * 150) + 250 : Math.floor(topRand * 100) - 80
     points.push({
       id: i,
       left: baseLeft + i * spacing,
