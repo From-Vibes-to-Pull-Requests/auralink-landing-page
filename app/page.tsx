@@ -6,6 +6,7 @@ import { IntegrationCarousel } from "@/components/IntegrationCarousel"
 import { PricingSection } from "@/components/PricingSection"
 import { FAQSection } from "@/components/FAQSection"
 import { Footer } from "@/components/Footer"
+import { AskAuraChat } from "@/components/AskAuraChat"
 
 export default function Page() {
   return (
@@ -18,6 +19,7 @@ export default function Page() {
       <PricingSection />
       <FAQSection />
       <Footer />
+      <AskAuraChat />
     </>
   )
 }
