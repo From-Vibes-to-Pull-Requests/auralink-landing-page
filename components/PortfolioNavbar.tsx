@@ -59,7 +59,7 @@ export const PortfolioNavbar = () => {
           <div className="flex-shrink-0">
             <button
               onClick={() => handleLinkClick("#home")}
-              className="text-2xl font-bold text-foreground hover:text-primary transition-colors duration-200"
+              className="text-2xl font-bold text-pink-500 hover:text-pink-600 transition-colors duration-200"
               style={{
                 fontFamily: "Plus Jakarta Sans, sans-serif",
               }}
@@ -81,14 +81,14 @@ export const PortfolioNavbar = () => {
                 <button
                   key={link.name}
                   onClick={() => handleLinkClick(link.href)}
-                  className="text-foreground hover:text-primary px-3 py-2 text-base font-medium transition-colors duration-200 relative group"
+                  className="text-foreground hover:text-pink-600 px-3 py-2 text-base font-medium transition-colors duration-200 relative group rounded-md hover:bg-pink-50"
                   style={{
                     fontFamily: "Figtree, sans-serif",
                     fontWeight: "400",
                   }}
                 >
                   <span>{link.name}</span>
-                  <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></div>
+                  <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-pink-500 transition-all duration-300 group-hover:w-full"></div>
                 </button>
               ))}
             </div>
@@ -97,7 +97,7 @@ export const PortfolioNavbar = () => {
           <div className="hidden md:block">
             <button
               onClick={() => handleLinkClick("#contact")}
-              className="bg-[#156d95] text-white px-[18px] rounded-full text-base font-semibold hover:bg-[#156d95]/90 transition-all duration-200 hover:rounded-2xl shadow-sm hover:shadow-md whitespace-nowrap leading-4 py-[15px]"
+              className="bg-pink-500 text-white px-[18px] rounded-full text-base font-semibold hover:bg-pink-600 transition-all duration-200 hover:rounded-2xl shadow-sm hover:shadow-md whitespace-nowrap leading-4 py-[15px]"
               style={{
                 fontFamily: "Plus Jakarta Sans, sans-serif",
               }}
@@ -116,7 +116,7 @@ export const PortfolioNavbar = () => {
           <div className="md:hidden">
             <button
               onClick={toggleMobileMenu}
-              className="text-foreground hover:text-primary p-2 rounded-md transition-colors duration-200"
+              className="text-foreground hover:text-pink-600 p-2 rounded-md transition-colors duration-200 hover:bg-pink-50"
               aria-label="Toggle mobile menu"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -151,7 +151,7 @@ export const PortfolioNavbar = () => {
                 <button
                   key={link.name}
                   onClick={() => handleLinkClick(link.href)}
-                  className="block w-full text-left text-foreground hover:text-primary py-3 text-lg font-medium transition-colors duration-200"
+                  className="block w-full text-left text-foreground hover:text-pink-600 py-3 text-lg font-medium transition-colors duration-200 rounded-md hover:bg-pink-50"
                   style={{
                     fontFamily: "Figtree, sans-serif",
                     fontWeight: "400",
@@ -163,7 +163,7 @@ export const PortfolioNavbar = () => {
               <div className="pt-4 border-t border-border">
                 <button
                   onClick={() => handleLinkClick("#contact")}
-                  className="w-full bg-[#156d95] text-white px-[18px] py-[15px] rounded-full text-base font-semibold hover:bg-[#156d95]/90 transition-all duration-200"
+                  className="w-full bg-pink-500 text-white px-[18px] py-[15px] rounded-full text-base font-semibold hover:bg-pink-600 transition-all duration-200"
                   style={{
                     fontFamily: "Plus Jakarta Sans, sans-serif",
                   }}

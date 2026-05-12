@@ -129,7 +129,7 @@ export const BankingScaleHero = () => {
             </div>
 
             <h2
-              className="text-[40px] font-normal leading-tight tracking-tight text-[#111A4A] mb-6"
+              className="text-[40px] font-normal leading-tight tracking-tight text-pink-500 mb-6"
               style={{
                 fontFamily: "var(--font-figtree), Figtree",
                 fontSize: "40px",
@@ -158,7 +158,7 @@ export const BankingScaleHero = () => {
               through our advanced AI-powered platform.
             </p>
 
-            <button className="relative inline-flex justify-center items-center leading-4 text-center cursor-pointer whitespace-nowrap outline-none font-medium h-9 text-[#232730] bg-white/50 backdrop-blur-sm shadow-[0_1px_1px_0_rgba(255,255,255,0),0_0_0_1px_rgba(87,90,100,0.12)] transition-all duration-200 ease-in-out rounded-lg px-4 mt-5 text-sm group hover:shadow-[0_1px_2px_0_rgba(0,0,0,0.05),0_0_0_1px_rgba(87,90,100,0.18)]">
+            <button className="relative inline-flex justify-center items-center leading-4 text-center cursor-pointer whitespace-nowrap outline-none font-medium h-9 text-white bg-pink-500 backdrop-blur-sm shadow-sm transition-all duration-200 ease-in-out rounded-lg px-4 mt-5 text-sm group hover:bg-pink-600 hover:shadow-md">
               <span className="relative z-10 flex items-center gap-1">
                 Learn about our platform
                 <ArrowRight className="w-4 h-4 -mr-1 transition-transform duration-150 group-hover:translate-x-1" />
@@ -256,10 +256,7 @@ export const BankingScaleHero = () => {
                       className="flex flex-col gap-2"
                     >
                       <span
-                        className="text-2xl font-medium leading-[26.4px] tracking-tight text-[#167E6C]"
-                        style={{
-                          color: "#146e96",
-                        }}
+                        className="text-2xl font-medium leading-[26.4px] tracking-tight text-pink-500"
                       >
                         {stat.value}
                       </span>

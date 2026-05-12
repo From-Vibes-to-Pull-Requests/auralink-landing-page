@@ -97,7 +97,7 @@ export const Footer = ({
           >
             <div className="mb-4">
               <h3
-                className="text-2xl font-semibold text-[#202020] mb-2"
+                className="text-2xl font-semibold text-pink-500 mb-2"
                 style={{ fontFamily: "Figtree", fontWeight: "500" }}
               >
                 {companyName}
@@ -159,7 +159,7 @@ export const Footer = ({
               className="col-span-1"
             >
               <h4
-                className="text-sm font-medium text-[#202020] mb-4 uppercase tracking-wide"
+                className="text-sm font-medium text-pink-500 mb-4 uppercase tracking-wide"
                 style={{ fontFamily: "Figtree", fontWeight: "500" }}
               >
                 {section.title}

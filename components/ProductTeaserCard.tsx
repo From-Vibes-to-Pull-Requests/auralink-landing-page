@@ -91,7 +91,7 @@ export const ProductTeaserCard = (props: ProductTeaserCardProps) => {
             </a>
 
             <h1
-              className="text-[56px] leading-[60px] tracking-tight text-[#202020] max-w-[520px] mb-6"
+              className="text-[56px] leading-[60px] tracking-tight text-pink-500 max-w-[520px] mb-6"
               style={{
                 fontWeight: "500",
                 fontFamily: "var(--font-figtree), Figtree",
@@ -125,10 +125,7 @@ export const ProductTeaserCard = (props: ProductTeaserCardProps) => {
                 <a
                   href={primaryButtonHref}
                   onClick={(e) => e.preventDefault()}
-                  className="block cursor-pointer text-white bg-[#0988f0] rounded-full px-[18px] py-[15px] text-base leading-4 whitespace-nowrap transition-all duration-150 ease-[cubic-bezier(0.455,0.03,0.515,0.955)] hover:rounded-2xl"
-                  style={{
-                    background: "#156d95",
-                  }}
+                  className="block cursor-pointer text-white bg-pink-500 rounded-full px-[18px] py-[15px] text-base leading-4 whitespace-nowrap transition-all duration-150 ease-[cubic-bezier(0.455,0.03,0.515,0.955)] hover:rounded-2xl hover:bg-pink-600"
                 >
                   {primaryButtonText}
                 </a>
@@ -137,7 +134,7 @@ export const ProductTeaserCard = (props: ProductTeaserCardProps) => {
                 <a
                   href={secondaryButtonHref}
                   onClick={(e) => e.preventDefault()}
-                  className="block cursor-pointer text-[#202020] border border-[#202020] rounded-full px-[18px] py-[15px] text-base leading-4 whitespace-nowrap transition-all duration-150 ease-[cubic-bezier(0.455,0.03,0.515,0.955)] hover:rounded-2xl"
+                  className="block cursor-pointer text-white bg-pink-500 rounded-full px-[18px] py-[15px] text-base leading-4 whitespace-nowrap transition-all duration-150 ease-[cubic-bezier(0.455,0.03,0.515,0.955)] hover:rounded-2xl hover:bg-pink-600"
                 >
                   {secondaryButtonText}
                 </a>
