@@ -30,9 +30,9 @@ const caseStudies: CaseStudy[] = [
         />
       </svg>
     ),
-    title: "Clandestine uses Auralink to understand how their teams collaborate in real-time.",
+    title: "Clandestine uses Neurolink to understand how their teams collaborate in real-time.",
     features: ["Slack Calls", "Meeting Transcripts", "Sentiment Reports"],
-    quote: "Auralink gives us clarity on team alignment we never had before.",
+    quote: "Neurolink gives us clarity on team alignment we never had before.",
     attribution: "Marie Chen, Head of Operations, Clandestine",
     accentColor: "#16b364",
     cards: [
@@ -126,9 +126,9 @@ const caseStudies: CaseStudy[] = [
         </defs>
       </svg>
     ),
-    title: "Cloudwatch leverages Auralink to monitor cross-functional team dynamics across global offices.",
+    title: "Cloudwatch leverages Neurolink to monitor cross-functional team dynamics across global offices.",
     features: ["Slack Calls", "Meeting Transcripts", "Sentiment Reports"],
-    quote: "With Auralink, we can see collaboration patterns that directly impact our product velocity.",
+    quote: "With Neurolink, we can see collaboration patterns that directly impact our product velocity.",
     attribution: "Sarah Chen, VP Engineering, Cloudwatch",
     accentColor: "#3b82f6",
     cards: [
@@ -167,9 +167,9 @@ const caseStudies: CaseStudy[] = [
         </g>
       </svg>
     ),
-    title: "EightBall relies on Auralink to track team health metrics and async communication quality.",
+    title: "EightBall relies on Neurolink to track team health metrics and async communication quality.",
     features: ["Slack Calls", "Sentiment Reports"],
-    quote: "Auralink transformed how we understand our remote-first culture.",
+    quote: "Neurolink transformed how we understand our remote-first culture.",
     attribution: "Karri Saarinen, Co-founder, EightBall",
     accentColor: "#0A0D12",
     cards: [
@@ -281,7 +281,7 @@ const caseStudies: CaseStudy[] = [
         </g>
       </svg>
     ),
-    title: "CoreOS uses Auralink to ensure design and engineering teams stay in sync during sprints.",
+    title: "CoreOS uses Neurolink to ensure design and engineering teams stay in sync during sprints.",
     features: ["Meeting Transcripts", "Sentiment Reports"],
     quote: "The sentiment analysis helps us identify friction points before they become blockers.",
     attribution: "Noah Levin, VP Engineering, CoreOS",
@@ -726,7 +726,7 @@ export const CaseStudiesCarousel = () => {
               fontFamily: "var(--font-figtree), Figtree",
             }}
           >
-            See how leading teams use Auralink to gain clarity on collaboration and team alignment.
+            See how leading teams use Neurolink to gain clarity on collaboration and team alignment.
           </p>
         </div>
 

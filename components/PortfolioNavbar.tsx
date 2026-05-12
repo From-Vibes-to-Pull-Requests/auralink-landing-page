@@ -70,7 +70,7 @@ export const PortfolioNavbar = () => {
                   fontWeight: "800",
                 }}
               >
-                Auralink
+                Neurolink
               </span>
             </button>
           </div>
