@@ -29,13 +29,26 @@ export const metadata: Metadata = {
   },
 }
 
+const themeInitScript = `(() => {
+  try {
+    var stored = localStorage.getItem('auralink-theme');
+    var theme = stored === 'dark' || stored === 'light' ? stored : 'light';
+    var root = document.documentElement;
+    if (theme === 'dark') root.classList.add('dark');
+    root.style.colorScheme = theme;
+  } catch (e) {}
+})();`
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body className={`${inter.variable} ${figtree.variable} ${geistMono.variable} font-sans antialiased`}>
         {children}
       </body>
