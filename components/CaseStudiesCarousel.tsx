@@ -443,7 +443,7 @@ const NotionCollaborationCard = ({
     >
       <div className="flex flex-col space-y-5">
         <div className="flex items-center justify-between">
-          <h4 className="text-sm font-semibold text-foreground">Team Alignment</h4>
+          <h4 className="text-sm font-semibold text-pink-500">Team Alignment</h4>
           <span className="text-xs text-muted-foreground">Real-time</span>
         </div>
 
@@ -520,7 +520,7 @@ const StripeGlobalCard = ({
     >
       <div className="flex flex-col space-y-5">
         <div className="flex items-center justify-between">
-          <h4 className="text-sm font-semibold text-foreground">Global Team Dynamics</h4>
+          <h4 className="text-sm font-semibold text-pink-500">Global Team Dynamics</h4>
           <span className="text-xs text-muted-foreground">Last 24h</span>
         </div>
 
@@ -603,7 +603,7 @@ const FigmaSprintCard = ({
               </svg>
             </div>
             <div>
-              <h4 className="text-sm font-semibold text-foreground">Sprint Planning</h4>
+              <h4 className="text-sm font-semibold text-pink-500">Sprint Planning</h4>
               <p className="text-xs text-muted-foreground">Week 3 • Day 2</p>
             </div>
           </div>
@@ -711,7 +711,7 @@ export const CaseStudiesCarousel = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h1
-            className="text-[40px] leading-tight font-normal text-foreground mb-6 tracking-tight"
+            className="text-[40px] leading-tight font-normal text-pink-500 mb-6 tracking-tight"
             style={{
               fontWeight: "400",
               fontFamily: "var(--font-figtree), Figtree",
@@ -756,7 +756,7 @@ export const CaseStudiesCarousel = () => {
                 <div className="text-foreground/60">{currentStudy.logo}</div>
 
                 <h2
-                  className="text-4xl font-bold text-foreground leading-tight tracking-tight"
+                  className="text-4xl font-bold text-pink-500 leading-tight tracking-tight"
                   style={{
                     fontFamily: "var(--font-figtree), Figtree",
                     fontWeight: "400",
@@ -800,7 +800,7 @@ export const CaseStudiesCarousel = () => {
                   <button
                     key={idx}
                     onClick={() => goToSlide(idx)}
-                    className={`h-2 rounded-full transition-all duration-300 ${idx === currentIndex ? "w-8 bg-primary" : "w-2 bg-muted-foreground/30 hover:bg-muted-foreground/50"}`}
+                    className={`h-2 rounded-full transition-all duration-300 ${idx === currentIndex ? "w-8 bg-pink-500" : "w-2 bg-pink-200 hover:bg-pink-300"}`}
                     aria-label={`Go to slide ${idx + 1}`}
                   />
                 ))}
@@ -809,7 +809,7 @@ export const CaseStudiesCarousel = () => {
               <div className="flex gap-2">
                 <button
                   onClick={prevSlide}
-                  className="p-2 rounded-lg border border-border hover:bg-accent transition-colors"
+                  className="p-2 rounded-lg border border-pink-200 bg-pink-500 text-white hover:bg-pink-600 transition-colors"
                   aria-label="Previous slide"
                 >
                   <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -824,7 +824,7 @@ export const CaseStudiesCarousel = () => {
                 </button>
                 <button
                   onClick={nextSlide}
-                  className="p-2 rounded-lg border border-border hover:bg-accent transition-colors"
+                  className="p-2 rounded-lg border border-pink-200 bg-pink-500 text-white hover:bg-pink-600 transition-colors"
                   aria-label="Next slide"
                 >
                   <svg width="20" height="20" viewBox="0 0 20 20" fill="none">

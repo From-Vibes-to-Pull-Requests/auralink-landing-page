@@ -45,7 +45,7 @@ export const FAQSection = ({ title = "Frequently asked questions", faqs = defaul
           {/* Left Column - Title */}
           <div className="lg:col-span-4">
             <h2
-              className="text-[40px] leading-tight font-normal text-[#202020] tracking-tight sticky top-24"
+              className="text-[40px] leading-tight font-normal text-pink-500 tracking-tight sticky top-24"
               style={{
                 fontFamily: "var(--font-figtree), Figtree",
                 fontWeight: "400",
@@ -63,7 +63,7 @@ export const FAQSection = ({ title = "Frequently asked questions", faqs = defaul
                 <div key={index} className="border-b border-[#e5e5e5] last:border-b-0">
                   <button
                     onClick={() => toggleFAQ(index)}
-                    className="w-full flex items-center justify-between py-6 text-left group hover:opacity-70 transition-opacity duration-150"
+                    className="w-full flex items-center justify-between py-6 px-3 -mx-3 text-left rounded-lg bg-pink-50 group hover:bg-pink-100 transition-colors duration-150"
                     aria-expanded={openIndex === index}
                   >
                     <span
