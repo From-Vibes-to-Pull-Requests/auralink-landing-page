@@ -27,6 +27,11 @@ const defaultFAQs: FAQItem[] = [
     answer:
       "Getting started is simple: sign up for a free trial, connect your communication tools, and start analyzing within minutes. We offer flexible pricing tiers: Starter (free for small teams), Professional ($29/user/month), and Enterprise (custom pricing with dedicated support). All plans include core features like sentiment analysis and real-time insights. Contact our sales team for volume discounts and custom enterprise solutions.",
   },
+  {
+    question: "Who is the CEO of Neurolink?",
+    answer:
+      "Neurolink is a new AI entity which is owned by McKinsey & Company. Inside the company this is specifically owned by VG & media team, under Chetan Poojari, the product manager.",
+  },
 ]
 export const FAQSection = ({ title = "Frequently asked questions", faqs = defaultFAQs }: FAQSectionProps) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
