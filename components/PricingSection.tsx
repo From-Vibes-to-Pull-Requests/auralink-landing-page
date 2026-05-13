@@ -77,7 +77,7 @@ export function PricingSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="font-figtree text-[40px] font-normal leading-tight mb-4">Choose Your Plan</h2>
+          <h2 className="font-figtree text-[40px] font-normal leading-tight mb-4 text-sky-800">Choose Your Plan</h2>
           <p className="font-figtree text-lg text-muted-foreground max-w-2xl mx-auto">
             Get started with Neurolink's communication intelligence platform. All plans include API access and team
             collaboration.
@@ -86,13 +86,13 @@ export function PricingSection() {
 
         {/* Billing Toggle */}
         <div className="flex justify-center mb-12">
-          <div className="inline-flex items-center gap-2 bg-secondary rounded-full p-1">
+          <div className="inline-flex items-center gap-2 bg-sky-100 rounded-full p-1">
             <button
               type="button"
               onClick={() => setIsYearly(false)}
               className={cn(
                 "px-6 py-2 rounded-full font-figtree text-lg transition-all",
-                !isYearly ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground",
+                !isYearly ? "bg-amber-400 text-slate-900 shadow-sm" : "text-slate-600 hover:text-slate-900 hover:bg-amber-100/80",
               )}
             >
               Monthly
@@ -102,11 +102,11 @@ export function PricingSection() {
               onClick={() => setIsYearly(true)}
               className={cn(
                 "px-6 py-2 rounded-full font-figtree text-lg transition-all",
-                isYearly ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground",
+                isYearly ? "bg-amber-400 text-slate-900 shadow-sm" : "text-slate-600 hover:text-slate-900 hover:bg-amber-100/80",
               )}
             >
               Yearly
-              <span className="ml-2 text-sm text-[#156d95]">Save 17%</span>
+              <span className="ml-2 text-sm text-orange-600 font-medium">Save 17%</span>
             </button>
           </div>
         </div>
@@ -121,17 +121,17 @@ export function PricingSection() {
               className={cn(
                 "relative p-8 rounded-2xl text-left transition-all border-2",
                 selectedPlan === plan.level
-                  ? "border-[#156d95] bg-[#156d95]/5"
-                  : "border-border hover:border-[#156d95]/50",
+                  ? "border-sky-500 bg-sky-100/60"
+                  : "border-border hover:border-sky-300 hover:bg-amber-50/50",
               )}
             >
               {plan.popular && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#156d95] text-white px-4 py-1 rounded-full text-sm font-figtree">
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-orange-400 text-slate-900 px-4 py-1 rounded-full text-sm font-figtree font-medium">
                   Most Popular
                 </span>
               )}
               <div className="mb-6">
-                <h3 className="font-figtree text-2xl font-medium mb-2">{plan.name}</h3>
+                <h3 className="font-figtree text-2xl font-medium mb-2 text-sky-800">{plan.name}</h3>
                 <div className="flex items-baseline gap-1">
                   <span className="font-figtree text-4xl font-medium">
                     ${isYearly ? plan.price.yearly : plan.price.monthly}
@@ -142,7 +142,7 @@ export function PricingSection() {
               <div
                 className={cn(
                   "w-full py-3 px-6 rounded-full font-figtree text-lg transition-all text-center",
-                  selectedPlan === plan.level ? "bg-[#156d95] text-white" : "bg-secondary text-foreground",
+                  selectedPlan === plan.level ? "bg-amber-400 text-slate-900" : "bg-sky-100 text-slate-800",
                 )}
               >
                 {selectedPlan === plan.level ? "Selected" : "Select Plan"}
@@ -158,7 +158,7 @@ export function PricingSection() {
               {/* Table Header */}
               <div className="flex items-center p-6 bg-secondary border-b border-border">
                 <div className="flex-1">
-                  <h3 className="font-figtree text-xl font-medium">Features</h3>
+                  <h3 className="font-figtree text-xl font-medium text-sky-800">Features</h3>
                 </div>
                 <div className="flex items-center gap-8">
                   {plans.map((plan) => (
@@ -176,7 +176,7 @@ export function PricingSection() {
                   className={cn(
                     "flex items-center p-6 transition-colors",
                     index % 2 === 0 ? "bg-background" : "bg-secondary/30",
-                    feature.included === selectedPlan && "bg-[#156d95]/5",
+                    feature.included === selectedPlan && "bg-sky-100/80",
                   )}
                 >
                   <div className="flex-1">
@@ -186,7 +186,7 @@ export function PricingSection() {
                     {plans.map((plan) => (
                       <div key={plan.level} className="w-24 flex justify-center">
                         {shouldShowCheck(feature.included, plan.level) ? (
-                          <div className="w-6 h-6 rounded-full bg-[#156d95] flex items-center justify-center">
+                          <div className="w-6 h-6 rounded-full bg-sky-500 flex items-center justify-center">
                             <CheckIcon className="w-4 h-4 text-white" />
                           </div>
                         ) : (
@@ -203,7 +203,7 @@ export function PricingSection() {
 
         {/* CTA Button */}
         <div className="mt-12 text-center">
-          <button className="bg-[#156d95] text-white px-[18px] py-[15px] rounded-full font-figtree text-lg hover:rounded-2xl transition-all">
+          <button className="bg-amber-400 hover:bg-amber-500 text-slate-900 px-[18px] py-[15px] rounded-full font-figtree text-lg font-medium hover:rounded-2xl transition-all shadow-sm">
             Get started with {plans.find((p) => p.level === selectedPlan)?.name}
           </button>
         </div>
