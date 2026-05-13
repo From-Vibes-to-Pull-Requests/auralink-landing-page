@@ -47,7 +47,7 @@ export const ProductTeaserCard = (props: ProductTeaserCardProps) => {
               duration: 0.8,
               ease: [0.645, 0.045, 0.355, 1],
             }}
-            className="col-span-12 lg:col-span-6 bg-[#e9e9e9] rounded-[40px] p-12 lg:p-16 flex flex-col justify-end aspect-square overflow-hidden"
+            className="col-span-12 lg:col-span-6 bg-gradient-to-br from-sky-100 to-amber-100 rounded-[40px] p-12 lg:p-16 flex flex-col justify-end aspect-square overflow-hidden"
           >
             <a
               href={primaryButtonHref}
@@ -77,7 +77,7 @@ export const ProductTeaserCard = (props: ProductTeaserCardProps) => {
                 <ArrowUpRight className="w-[0.71em] h-[0.71em]" />
               </motion.span>
               <span
-                className="text-[32px] leading-[160px] tracking-tight bg-gradient-to-r from-[#202020] via-[#00517f] via-[#52aee3] to-[#9ed2fc] bg-clip-text text-transparent"
+                className="text-[32px] leading-[160px] tracking-tight bg-gradient-to-r from-amber-500 via-orange-400 to-sky-400 bg-clip-text text-transparent"
                 style={{
                   fontFeatureSettings: '"clig" 0, "liga" 0',
                   height: "98px",
@@ -91,7 +91,7 @@ export const ProductTeaserCard = (props: ProductTeaserCardProps) => {
             </a>
 
             <h1
-              className="text-[56px] leading-[60px] tracking-tight text-[#202020] max-w-[520px] mb-6"
+              className="text-[56px] leading-[60px] tracking-tight text-sky-800 max-w-[520px] mb-6"
               style={{
                 fontWeight: "500",
                 fontFamily: "var(--font-figtree), Figtree",
@@ -101,7 +101,7 @@ export const ProductTeaserCard = (props: ProductTeaserCardProps) => {
             </h1>
 
             <p
-              className="text-lg leading-7 text-[#404040] max-w-[520px] mb-6"
+              className="text-lg leading-7 text-slate-600 max-w-[520px] mb-6"
               style={{
                 fontFamily: "var(--font-figtree), Figtree",
               }}
@@ -125,10 +125,7 @@ export const ProductTeaserCard = (props: ProductTeaserCardProps) => {
                 <a
                   href={primaryButtonHref}
                   onClick={(e) => e.preventDefault()}
-                  className="block cursor-pointer text-white bg-[#0988f0] rounded-full px-[18px] py-[15px] text-base leading-4 whitespace-nowrap transition-all duration-150 ease-[cubic-bezier(0.455,0.03,0.515,0.955)] hover:rounded-2xl"
-                  style={{
-                    background: "#156d95",
-                  }}
+                  className="block cursor-pointer text-slate-900 bg-amber-400 rounded-full px-[18px] py-[15px] text-base leading-4 whitespace-nowrap transition-all duration-150 ease-[cubic-bezier(0.455,0.03,0.515,0.955)] hover:rounded-2xl hover:bg-amber-500"
                 >
                   {primaryButtonText}
                 </a>
@@ -137,7 +134,7 @@ export const ProductTeaserCard = (props: ProductTeaserCardProps) => {
                 <a
                   href={secondaryButtonHref}
                   onClick={(e) => e.preventDefault()}
-                  className="block cursor-pointer text-[#202020] border border-[#202020] rounded-full px-[18px] py-[15px] text-base leading-4 whitespace-nowrap transition-all duration-150 ease-[cubic-bezier(0.455,0.03,0.515,0.955)] hover:rounded-2xl"
+                  className="block cursor-pointer text-sky-800 border-2 border-sky-400 rounded-full px-[18px] py-[15px] text-base leading-4 whitespace-nowrap transition-all duration-150 ease-[cubic-bezier(0.455,0.03,0.515,0.955)] hover:rounded-2xl hover:bg-sky-50"
                 >
                   {secondaryButtonText}
                 </a>
@@ -160,7 +157,7 @@ export const ProductTeaserCard = (props: ProductTeaserCardProps) => {
             className="col-span-12 lg:col-span-6 bg-white rounded-[40px] flex justify-center items-center aspect-square overflow-hidden"
             style={{
               backgroundImage:
-                "url(https://storage.googleapis.com/storage.magicpath.ai/user/282171029206482944/assets/882ef3dd-3459-4fd8-a939-52ceada51d5c.png)",
+                "url(https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80&auto=format&fit=crop)",
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
