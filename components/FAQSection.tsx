@@ -39,13 +39,13 @@ export const FAQSection = ({ title = "Frequently asked questions", faqs = defaul
     setOpenIndex(openIndex === index ? null : index)
   }
   return (
-    <section className="w-full py-24 px-8 bg-white">
+    <section className="w-full py-24 px-8 bg-gradient-to-b from-amber-50/40 via-white to-sky-50/40">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-12 gap-16">
           {/* Left Column - Title */}
           <div className="lg:col-span-4">
             <h2
-              className="text-[40px] leading-tight font-normal text-[#202020] tracking-tight sticky top-24"
+              className="text-[40px] leading-tight font-normal text-sky-800 tracking-tight sticky top-24"
               style={{
                 fontFamily: "var(--font-figtree), Figtree",
                 fontWeight: "400",
@@ -60,14 +60,14 @@ export const FAQSection = ({ title = "Frequently asked questions", faqs = defaul
           <div className="lg:col-span-8">
             <div className="space-y-0">
               {faqs.map((faq, index) => (
-                <div key={index} className="border-b border-[#e5e5e5] last:border-b-0">
+                <div key={index} className="border-b border-sky-200 last:border-b-0">
                   <button
                     onClick={() => toggleFAQ(index)}
-                    className="w-full flex items-center justify-between py-6 text-left group hover:opacity-70 transition-opacity duration-150"
+                    className="w-full flex items-center justify-between py-6 text-left group rounded-xl px-2 hover:bg-sky-50/80 transition-colors duration-150"
                     aria-expanded={openIndex === index}
                   >
                     <span
-                      className="text-lg leading-7 text-[#202020] pr-8"
+                      className="text-lg leading-7 text-slate-800 pr-8"
                       style={{
                         fontFamily: "var(--font-figtree), Figtree",
                         fontWeight: "400",
@@ -85,7 +85,7 @@ export const FAQSection = ({ title = "Frequently asked questions", faqs = defaul
                       }}
                       className="flex-shrink-0"
                     >
-                      <Plus className="w-6 h-6 text-[#202020]" strokeWidth={1.5} />
+                      <Plus className="w-6 h-6 text-orange-500" strokeWidth={1.5} />
                     </motion.div>
                   </button>
 
@@ -112,7 +112,7 @@ export const FAQSection = ({ title = "Frequently asked questions", faqs = defaul
                       >
                         <div className="pb-6 pr-12">
                           <p
-                            className="text-lg leading-6 text-[#666666]"
+                            className="text-lg leading-6 text-slate-600"
                             style={{
                               fontFamily: "var(--font-figtree), Figtree",
                             }}
