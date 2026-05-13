@@ -379,7 +379,85 @@ const SlackCallCard = ({
   zIndex: number
 }) => {
   return (
-    null
+    <motion.div
+      initial={{
+        opacity: 0,
+        y: 20,
+        scale: 0.95,
+      }}
+      animate={{
+        opacity: 1,
+        y: 0,
+        scale: 1,
+      }}
+      transition={{
+        duration: 0.6,
+        ease: [0.76, 0, 0.24, 1],
+        delay,
+      }}
+      className="absolute w-[380px] rounded-xl p-6 backdrop-blur-xl"
+      style={{
+        backgroundColor: "rgba(255, 255, 255, 0.85)",
+        boxShadow: "inset 0 0 0 1px rgba(255, 255, 255, 0.8), 0 8px 32px 0 rgba(0, 0, 0, 0.12)",
+        filter: "drop-shadow(0 4px 6px rgba(30, 30, 44, 0.15))",
+        transform: "translate(40px, 60px)",
+        zIndex,
+      }}
+    >
+      <div className="flex flex-col space-y-5">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <div
+              className="w-8 h-8 rounded-lg flex items-center justify-center text-white"
+              style={{ backgroundColor: accentColor }}
+            >
+              <svg viewBox="0 0 16 16" fill="none" className="w-4 h-4">
+                <path
+                  d="M4 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm0 1a2.5 2.5 0 0 0 2.5-2.5V4a2.5 2.5 0 1 0-5 0v4A2.5 2.5 0 0 0 4 10.5Zm5-1.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z"
+                  stroke="currentColor"
+                  strokeWidth="1.2"
+                />
+              </svg>
+            </div>
+            <div>
+              <h4 className="text-sm font-semibold text-foreground">#product-launch</h4>
+              <p className="text-xs text-muted-foreground">Live call • 4 participants</p>
+            </div>
+          </div>
+          <span className="flex items-center gap-1.5 text-xs font-medium text-green-600">
+            <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+            Live
+          </span>
+        </div>
+
+        <div className="flex -space-x-2">
+          {["#F59E0B", "#3B82F6", "#10B981", "#EC4899"].map((color, i) => (
+            <div
+              key={i}
+              className="w-8 h-8 rounded-full border-2 border-white flex items-center justify-center text-xs font-semibold text-white"
+              style={{ backgroundColor: color }}
+            >
+              {String.fromCharCode(65 + i)}
+            </div>
+          ))}
+        </div>
+
+        <div className="space-y-2">
+          <div className="flex items-center justify-between text-sm">
+            <span className="text-muted-foreground">Engagement</span>
+            <span className="font-semibold text-foreground">High</span>
+          </div>
+          <div className="w-full h-2 bg-muted rounded-full overflow-hidden">
+            <div className="h-full rounded-full" style={{ width: "82%", backgroundColor: accentColor }} />
+          </div>
+        </div>
+
+        <div className="pt-3 border-t border-border/50 flex items-center justify-between text-xs text-muted-foreground">
+          <span>Duration: 24:18</span>
+          <span className="font-medium text-foreground">142 messages</span>
+        </div>
+      </div>
+    </motion.div>
   )
 }
 const MeetingTranscriptCard = ({
@@ -391,8 +469,71 @@ const MeetingTranscriptCard = ({
   delay: number
   zIndex: number
 }) => {
+  const lines = [
+    { speaker: "Alex", color: "#3B82F6", text: "Let's align on the Q3 roadmap priorities." },
+    { speaker: "Priya", color: "#10B981", text: "Auralink flagged tone shift — focusing on blockers." },
+    { speaker: "Jordan", color: "#F59E0B", text: "Engineering can ship the API by end of sprint." },
+  ]
   return (
-    null
+    <motion.div
+      initial={{
+        opacity: 0,
+        y: 20,
+        scale: 0.95,
+      }}
+      animate={{
+        opacity: 1,
+        y: 0,
+        scale: 1,
+      }}
+      transition={{
+        duration: 0.6,
+        ease: [0.76, 0, 0.24, 1],
+        delay,
+      }}
+      className="absolute w-[400px] rounded-xl p-6 backdrop-blur-xl"
+      style={{
+        backgroundColor: "rgba(255, 255, 255, 0.85)",
+        boxShadow: "inset 0 0 0 1px rgba(255, 255, 255, 0.8), 0 8px 32px 0 rgba(0, 0, 0, 0.12)",
+        filter: "drop-shadow(0 4px 6px rgba(30, 30, 44, 0.15))",
+        transform: "translate(-190px, -70px)",
+        zIndex,
+      }}
+    >
+      <div className="flex flex-col space-y-5">
+        <div className="flex items-center justify-between">
+          <h4 className="text-sm font-semibold text-foreground">Meeting Transcript</h4>
+          <span className="text-xs text-muted-foreground">Auto-generated</span>
+        </div>
+
+        <div className="space-y-3">
+          {lines.map((line, i) => (
+            <div key={i} className="flex gap-3">
+              <div
+                className="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-[10px] font-semibold text-white"
+                style={{ backgroundColor: line.color }}
+              >
+                {line.speaker.slice(0, 2).toUpperCase()}
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="text-xs font-semibold text-foreground">{line.speaker}</span>
+                  <span className="text-[10px] text-muted-foreground">00:{(i + 1) * 12}</span>
+                </div>
+                <p className="text-xs leading-relaxed text-muted-foreground">{line.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="pt-3 border-t border-border/50 flex items-center justify-between text-xs">
+          <span className="text-muted-foreground">Sentiment</span>
+          <span className="font-semibold" style={{ color: accentColor }}>
+            Constructive · 94%
+          </span>
+        </div>
+      </div>
+    </motion.div>
   )
 }
 const SentimentReportCard = ({
@@ -711,14 +852,15 @@ export const CaseStudiesCarousel = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h1
-            className="text-[40px] leading-tight font-normal text-sky-800 mb-6 tracking-tight"
+            className="text-[40px] leading-tight font-normal mb-6 tracking-tight"
             style={{
               fontWeight: "400",
               fontFamily: "var(--font-figtree), Figtree",
               fontSize: "40px",
+              color: "#4169E1",
             }}
           >
-            Customer Success Stories
+            Customer Testimonials
           </h1>
           <p
             className="text-lg leading-7 text-muted-foreground max-w-2xl mx-auto"
