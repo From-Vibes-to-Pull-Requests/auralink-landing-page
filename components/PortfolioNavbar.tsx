@@ -20,6 +20,7 @@ const navigationLinks: NavLink[] = [
   { name: "Pricing", href: "#pricing" },
   { name: "Solutions", href: "#solutions" },
   { name: "Resources", href: "#resources" },
+  { name: "Subscribe", href: "/subscribe", type: "route" },
   { name: "About Us", href: "/about", type: "route" },
   {
     name: "Contact Us",
