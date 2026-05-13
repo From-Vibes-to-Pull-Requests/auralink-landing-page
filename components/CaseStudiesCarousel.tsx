@@ -852,14 +852,15 @@ export const CaseStudiesCarousel = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h1
-            className="text-[40px] leading-tight font-normal text-foreground mb-6 tracking-tight"
+            className="text-[40px] leading-tight font-normal mb-6 tracking-tight"
             style={{
               fontWeight: "400",
               fontFamily: "var(--font-figtree), Figtree",
               fontSize: "40px",
+              color: "#4169E1",
             }}
           >
-            New Customer Success Stories
+            Customer Testimonials
           </h1>
           <p
             className="text-lg leading-7 text-muted-foreground max-w-2xl mx-auto"
