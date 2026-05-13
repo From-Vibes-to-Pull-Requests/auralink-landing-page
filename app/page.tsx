@@ -12,13 +12,25 @@ export default function Page() {
   return (
     <>
       <PortfolioNavbar />
-      <ProductTeaserCard />
-      <BankingScaleHero />
-      <CaseStudiesCarousel />
-      <IntegrationCarousel />
-      <PricingSection />
-      <FAQSection />
-      <Footer />
+      <div id="home" className="scroll-mt-24">
+        <ProductTeaserCard />
+      </div>
+      <div id="features" className="scroll-mt-24">
+        <BankingScaleHero />
+      </div>
+      <div id="solutions" className="scroll-mt-24">
+        <CaseStudiesCarousel />
+        <IntegrationCarousel />
+      </div>
+      <div id="pricing" className="scroll-mt-24">
+        <PricingSection />
+      </div>
+      <div id="resources" className="scroll-mt-24">
+        <FAQSection />
+      </div>
+      <div id="contact" className="scroll-mt-24">
+        <Footer />
+      </div>
       <AskAuraChat />
     </>
   )
