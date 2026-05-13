@@ -49,6 +49,7 @@ const defaultSections: FooterSection[] = [
   {
     title: "Resources",
     links: [
+      { label: "Subscribe", href: "/subscribe" },
       { label: "Documentation", href: "#docs" },
       { label: "Help Center", href: "#help" },
       { label: "Community", href: "#community" },
