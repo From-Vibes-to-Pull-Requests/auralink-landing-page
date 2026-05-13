@@ -3,29 +3,28 @@
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X } from "lucide-react"
-const navigationLinks = [
-  {
-    name: "Features",
-    href: "#features",
-  },
-  {
-    name: "Pricing",
-    href: "#pricing",
-  },
-  {
-    name: "Solutions",
-    href: "#solutions",
-  },
-  {
-    name: "Resources",
-    href: "#resources",
-  },
-] as any[]
+import { useRouter, usePathname } from "next/navigation"
+
+type NavLink = {
+  name: string
+  href: string
+  type?: "anchor" | "route"
+}
+
+const navigationLinks: NavLink[] = [
+  { name: "Features", href: "#features", type: "anchor" },
+  { name: "Pricing", href: "#pricing", type: "anchor" },
+  { name: "Solutions", href: "#solutions", type: "anchor" },
+  { name: "Resources", href: "#resources", type: "anchor" },
+  { name: "About Us", href: "/about", type: "route" },
+]
 
 // @component: PortfolioNavbar
 export const PortfolioNavbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const router = useRouter()
+  const pathname = usePathname()
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20)
@@ -39,13 +38,20 @@ export const PortfolioNavbar = () => {
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false)
   }
-  const handleLinkClick = (href: string) => {
+  const handleLinkClick = (href: string, type: NavLink["type"] = "anchor") => {
     closeMobileMenu()
+    if (type === "route") {
+      router.push(href)
+      return
+    }
+    // Anchor link: if we're on a different route, navigate home with hash first.
+    if (pathname !== "/") {
+      router.push(`/${href}`)
+      return
+    }
     const element = document.querySelector(href)
     if (element) {
-      element.scrollIntoView({
-        behavior: "smooth",
-      })
+      element.scrollIntoView({ behavior: "smooth" })
     }
   }
 
@@ -58,7 +64,7 @@ export const PortfolioNavbar = () => {
         <div className="flex items-center justify-between h-20">
           <div className="flex-shrink-0">
             <button
-              onClick={() => handleLinkClick("#home")}
+              onClick={() => handleLinkClick("/", "route")}
               className="text-2xl font-bold text-foreground hover:text-primary transition-colors duration-200"
               style={{
                 fontFamily: "Plus Jakarta Sans, sans-serif",
@@ -80,7 +86,7 @@ export const PortfolioNavbar = () => {
               {navigationLinks.map((link) => (
                 <button
                   key={link.name}
-                  onClick={() => handleLinkClick(link.href)}
+                  onClick={() => handleLinkClick(link.href, link.type)}
                   className="text-foreground hover:text-primary px-3 py-2 text-base font-medium transition-colors duration-200 relative group"
                   style={{
                     fontFamily: "Figtree, sans-serif",
@@ -96,7 +102,7 @@ export const PortfolioNavbar = () => {
 
           <div className="hidden md:block">
             <button
-              onClick={() => handleLinkClick("#contact")}
+              onClick={() => handleLinkClick("#contact", "anchor")}
               className="bg-[#156d95] text-white px-[18px] rounded-full text-base font-semibold hover:bg-[#156d95]/90 transition-all duration-200 hover:rounded-2xl shadow-sm hover:shadow-md whitespace-nowrap leading-4 py-[15px]"
               style={{
                 fontFamily: "Plus Jakarta Sans, sans-serif",
@@ -150,7 +156,7 @@ export const PortfolioNavbar = () => {
               {navigationLinks.map((link) => (
                 <button
                   key={link.name}
-                  onClick={() => handleLinkClick(link.href)}
+                  onClick={() => handleLinkClick(link.href, link.type)}
                   className="block w-full text-left text-foreground hover:text-primary py-3 text-lg font-medium transition-colors duration-200"
                   style={{
                     fontFamily: "Figtree, sans-serif",
@@ -162,7 +168,7 @@ export const PortfolioNavbar = () => {
               ))}
               <div className="pt-4 border-t border-border">
                 <button
-                  onClick={() => handleLinkClick("#contact")}
+                  onClick={() => handleLinkClick("#contact", "anchor")}
                   className="w-full bg-[#156d95] text-white px-[18px] py-[15px] rounded-full text-base font-semibold hover:bg-[#156d95]/90 transition-all duration-200"
                   style={{
                     fontFamily: "Plus Jakarta Sans, sans-serif",
