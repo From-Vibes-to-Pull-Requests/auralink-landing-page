@@ -844,7 +844,7 @@ export const CaseStudiesCarousel = () => {
   }
   return (
     <div
-      className="w-full min-h-screen bg-gradient-to-br from-background via-background to-muted/20 flex items-center justify-center py-24 px-8"
+      className="w-full min-h-screen bg-gradient-to-br from-amber-50/50 via-sky-50/40 to-cyan-50/50 flex items-center justify-center py-24 px-8"
       onMouseEnter={() => setIsAutoPlaying(false)}
       onMouseLeave={() => setIsAutoPlaying(true)}
     >
@@ -898,7 +898,7 @@ export const CaseStudiesCarousel = () => {
                 <div className="text-foreground/60">{currentStudy.logo}</div>
 
                 <h2
-                  className="text-4xl font-bold text-foreground leading-tight tracking-tight"
+                  className="text-4xl font-bold text-sky-800 leading-tight tracking-tight"
                   style={{
                     fontFamily: "var(--font-figtree), Figtree",
                     fontWeight: "400",
@@ -914,7 +914,7 @@ export const CaseStudiesCarousel = () => {
                   ))}
                 </div>
 
-                <blockquote className="border-l-4 border-primary pl-6 py-2">
+                <blockquote className="border-l-4 border-amber-400 pl-6 py-2">
                   <p
                     className="text-lg leading-7 text-foreground/80 italic mb-3"
                     style={{
@@ -942,7 +942,7 @@ export const CaseStudiesCarousel = () => {
                   <button
                     key={idx}
                     onClick={() => goToSlide(idx)}
-                    className={`h-2 rounded-full transition-all duration-300 ${idx === currentIndex ? "w-8 bg-primary" : "w-2 bg-muted-foreground/30 hover:bg-muted-foreground/50"}`}
+                    className={`h-2 rounded-full transition-all duration-300 ${idx === currentIndex ? "w-8 bg-amber-400" : "w-2 bg-sky-200 hover:bg-sky-300"}`}
                     aria-label={`Go to slide ${idx + 1}`}
                   />
                 ))}
@@ -951,7 +951,7 @@ export const CaseStudiesCarousel = () => {
               <div className="flex gap-2">
                 <button
                   onClick={prevSlide}
-                  className="p-2 rounded-lg border border-border hover:bg-accent transition-colors"
+                  className="p-2 rounded-lg border border-sky-200 bg-amber-300/90 text-slate-900 hover:bg-amber-400 transition-colors"
                   aria-label="Previous slide"
                 >
                   <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -966,7 +966,7 @@ export const CaseStudiesCarousel = () => {
                 </button>
                 <button
                   onClick={nextSlide}
-                  className="p-2 rounded-lg border border-border hover:bg-accent transition-colors"
+                  className="p-2 rounded-lg border border-sky-200 bg-amber-300/90 text-slate-900 hover:bg-amber-400 transition-colors"
                   aria-label="Next slide"
                 >
                   <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
