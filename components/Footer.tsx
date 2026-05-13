@@ -69,14 +69,14 @@ const defaultSections: FooterSection[] = [
 ]
 
 export const Footer = ({
-  companyName = "Auralink",
+  companyName = "Neurolink",
   tagline = "The Intelligence Layer for Modern Communication",
   sections = defaultSections,
   socialLinks = {
     twitter: "https://twitter.com",
     linkedin: "https://linkedin.com",
     github: "https://github.com",
-    email: "hello@auralink.com",
+    email: "hello@neurolink.com",
   },
   copyrightText,
 }: FooterProps) => {

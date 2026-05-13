@@ -1,4 +1,4 @@
-# Auralink Landing Page
+# Neurolink Landing Page
 
 This is a minimal [Next.js](https://nextjs.org/) landing page project for Vibes to Pull Requests workshop participants.
 
