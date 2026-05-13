@@ -161,7 +161,7 @@ export const IntegrationCarousel = ({
 
   // @return
   return (
-    <div className="w-full py-24 bg-white">
+    <div className="w-full py-24 bg-gradient-to-b from-white to-sky-50/50">
       <div className="max-w-[680px] mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -172,7 +172,7 @@ export const IntegrationCarousel = ({
         >
           <div className="flex flex-col items-center gap-4">
             <h2
-              className="text-[40px] leading-tight font-normal text-[#222222] text-center tracking-tight mb-0"
+              className="text-[40px] leading-tight font-normal text-sky-800 text-center tracking-tight mb-0"
               style={{
                 fontFamily: "var(--font-figtree), Figtree",
                 fontWeight: "400",
@@ -182,7 +182,7 @@ export const IntegrationCarousel = ({
               {title}
             </h2>
             <p
-              className="text-lg leading-7 text-[#666666] text-center max-w-[600px] mt-2"
+              className="text-lg leading-7 text-slate-600 text-center max-w-[600px] mt-2"
               style={{
                 fontFamily: "var(--font-figtree), Figtree",
               }}
@@ -199,12 +199,7 @@ export const IntegrationCarousel = ({
           >
             <a
               href={buttonHref}
-              className="inline-block px-5 py-2.5 rounded-full bg-white text-[#222222] text-[15px] font-medium leading-6 text-center whitespace-nowrap transition-all duration-75 ease-out w-[182px] cursor-pointer hover:shadow-lg"
-              style={{
-                boxShadow:
-                  "0 -1px 0 0 rgb(181, 181, 181) inset, -1px 0 0 0 rgb(227, 227, 227) inset, 1px 0 0 0 rgb(227, 227, 227) inset, 0 1px 0 0 rgb(227, 227, 227) inset",
-                backgroundImage: "linear-gradient(rgba(255, 255, 255, 0.06) 80%, rgba(255, 255, 255, 0.12))",
-              }}
+              className="inline-block px-5 py-2.5 rounded-full bg-amber-400 text-slate-900 text-[15px] font-semibold leading-6 text-center whitespace-nowrap transition-all duration-75 ease-out w-[182px] cursor-pointer hover:bg-amber-500 hover:shadow-lg"
             >
               {buttonText}
             </a>
