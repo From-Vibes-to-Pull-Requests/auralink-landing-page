@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X } from "lucide-react"
+import { ThemeToggle } from "./ThemeToggle"
 const navigationLinks = [
   {
     name: "Features",
@@ -94,7 +95,8 @@ export const PortfolioNavbar = () => {
             </div>
           </div>
 
-          <div className="hidden md:block">
+          <div className="hidden md:flex items-center gap-3">
+            <ThemeToggle />
             <button
               onClick={() => handleLinkClick("#contact")}
               className="bg-[#156d95] text-white px-[18px] rounded-full text-base font-semibold hover:bg-[#156d95]/90 transition-all duration-200 hover:rounded-2xl shadow-sm hover:shadow-md whitespace-nowrap leading-4 py-[15px]"
@@ -113,7 +115,8 @@ export const PortfolioNavbar = () => {
             </button>
           </div>
 
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center gap-2">
+            <ThemeToggle />
             <button
               onClick={toggleMobileMenu}
               className="text-foreground hover:text-primary p-2 rounded-md transition-colors duration-200"
