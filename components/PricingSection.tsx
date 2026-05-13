@@ -14,10 +14,13 @@ interface PricingFeature {
   included: PlanLevel | "all"
 }
 
+type BillingCycle = "weekly" | "monthly" | "yearly"
+
 interface PricingPlan {
   name: string
   level: PlanLevel
   price: {
+    weekly: number
     monthly: number
     yearly: number
   }
@@ -44,18 +47,18 @@ const features: PricingFeature[] = [
 const plans: PricingPlan[] = [
   {
     name: "Starter",
-    price: { monthly: 29, yearly: 290 },
+    price: { weekly: 7, monthly: 29, yearly: 290 },
     level: "starter",
   },
   {
     name: "Pro",
-    price: { monthly: 99, yearly: 990 },
+    price: { weekly: 25, monthly: 99, yearly: 990 },
     level: "pro",
     popular: true,
   },
   {
     name: "Enterprise",
-    price: { monthly: 299, yearly: 2990 },
+    price: { weekly: 75, monthly: 299, yearly: 2990 },
     level: "enterprise",
   },
 ]
@@ -68,8 +71,30 @@ function shouldShowCheck(included: PricingFeature["included"], level: PlanLevel)
   return false
 }
 
+function priceForCycle(plan: PricingPlan, cycle: BillingCycle): number {
+  switch (cycle) {
+    case "weekly":
+      return plan.price.weekly
+    case "monthly":
+      return plan.price.monthly
+    case "yearly":
+      return plan.price.yearly
+  }
+}
+
+function periodLabel(cycle: BillingCycle): string {
+  switch (cycle) {
+    case "weekly":
+      return "week"
+    case "monthly":
+      return "month"
+    case "yearly":
+      return "year"
+  }
+}
+
 export function PricingSection() {
-  const [isYearly, setIsYearly] = React.useState(false)
+  const [billingCycle, setBillingCycle] = React.useState<BillingCycle>("monthly")
   const [selectedPlan, setSelectedPlan] = React.useState<PlanLevel>("pro")
 
   return (
@@ -86,23 +111,39 @@ export function PricingSection() {
 
         {/* Billing Toggle */}
         <div className="flex justify-center mb-12">
-          <div className="inline-flex items-center gap-2 bg-sky-100 rounded-full p-1">
+          <div className="inline-flex flex-wrap justify-center items-center gap-2 bg-sky-100 rounded-full p-1 max-w-full">
             <button
               type="button"
-              onClick={() => setIsYearly(false)}
+              onClick={() => setBillingCycle("weekly")}
               className={cn(
-                "px-6 py-2 rounded-full font-figtree text-lg transition-all",
-                !isYearly ? "bg-amber-400 text-slate-900 shadow-sm" : "text-slate-600 hover:text-slate-900 hover:bg-amber-100/80",
+                "px-5 sm:px-6 py-2 rounded-full font-figtree text-lg transition-all",
+                billingCycle === "weekly"
+                  ? "bg-amber-400 text-slate-900 shadow-sm"
+                  : "text-slate-600 hover:text-slate-900 hover:bg-amber-100/80",
+              )}
+            >
+              Weekly
+            </button>
+            <button
+              type="button"
+              onClick={() => setBillingCycle("monthly")}
+              className={cn(
+                "px-5 sm:px-6 py-2 rounded-full font-figtree text-lg transition-all",
+                billingCycle === "monthly"
+                  ? "bg-amber-400 text-slate-900 shadow-sm"
+                  : "text-slate-600 hover:text-slate-900 hover:bg-amber-100/80",
               )}
             >
               Monthly
             </button>
             <button
               type="button"
-              onClick={() => setIsYearly(true)}
+              onClick={() => setBillingCycle("yearly")}
               className={cn(
-                "px-6 py-2 rounded-full font-figtree text-lg transition-all",
-                isYearly ? "bg-amber-400 text-slate-900 shadow-sm" : "text-slate-600 hover:text-slate-900 hover:bg-amber-100/80",
+                "px-5 sm:px-6 py-2 rounded-full font-figtree text-lg transition-all",
+                billingCycle === "yearly"
+                  ? "bg-amber-400 text-slate-900 shadow-sm"
+                  : "text-slate-600 hover:text-slate-900 hover:bg-amber-100/80",
               )}
             >
               Yearly
@@ -133,10 +174,8 @@ export function PricingSection() {
               <div className="mb-6">
                 <h3 className="font-figtree text-2xl font-medium mb-2 text-sky-800">{plan.name}</h3>
                 <div className="flex items-baseline gap-1">
-                  <span className="font-figtree text-4xl font-medium">
-                    ${isYearly ? plan.price.yearly : plan.price.monthly}
-                  </span>
-                  <span className="font-figtree text-lg text-muted-foreground">/{isYearly ? "year" : "month"}</span>
+                  <span className="font-figtree text-4xl font-medium">${priceForCycle(plan, billingCycle)}</span>
+                  <span className="font-figtree text-lg text-muted-foreground">/{periodLabel(billingCycle)}</span>
                 </div>
               </div>
               <div
