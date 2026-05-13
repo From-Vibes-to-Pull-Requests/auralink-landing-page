@@ -28,7 +28,7 @@ const stats: StatItem[] = [
     delay: 0.2,
   },
   {
-    value: "60+",
+    value: "50+",
     description: "Languages supported\nworldwide",
     delay: 0.4,
   },
